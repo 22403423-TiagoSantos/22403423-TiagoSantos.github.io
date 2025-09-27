@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 header {
@@ -14,87 +14,120 @@ header {
   text-align: center;
 }
 
-section:nth-child(1){
-    height: 100vh;
-    background-image: url("images/c3uhsgo1vx541.jpg");
-    background-repeat : no-repeat;
-    background-size: cover;
-    position: relative;
+#inicio {
+  height: 100vh;
+  background-image: url("images/c3uhsgo1vx541.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
+
 .texto {
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    color: white;
-    font-size: 50px;
-}
-#inicio nav ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1rem;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 50px;
 }
 
-#inicio nav a{
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.884);
-    padding: 5px;
-    margin: 10px;
-    justify-content: flex-end;
-    display : flex;
+#inicio nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
-section:nth-child(2) {
+#inicio nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.808);
+  padding: 5px;
+  margin: 10px;
+}
+
+.meusProjetos {
+  position: absolute;
+  top: 43%;
+  left: 43%;
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 30px;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(230, 168, 98);
+
+}
+
+#projetos {
   height: 100vh;
   background: rgb(153, 202, 185);
 }
 
-#projetos h1{
+#projetos h1 {
   color: white;
   padding: 10px;
   font-size: 50px;
 }
 
-#projetos p{
+#projetos p {
   padding: 10px;
   font-size: 20px;
 }
 
-#projetos a{
-  margin: 40px auto;
+#projetos nav ul {
+  list-style: none;
   padding: 10px;
+  margin-top: 15%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 10px;
+}
+
+#projetos a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
   box-sizing: border-box;
+  height: 100px;
   width: 250px;
   border: 2px solid rgb(67, 168, 89);
   border-radius: 10px;
   color: white;
   background-color: rgb(130, 218, 149);
+}
+
+
+#cadeira {
+  height: 100vh;
+  background: rgb(235, 207, 229);
+  padding: 10px;
+}
+
+#texto{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100px;
 }
 
-#projetos nav a{
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.884);
-    padding: 5px;
-    margin: 10px;
-    display : flex;
+@media (max-width: 600px) {
+  #cadeira {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+  }
 }
 
-section:nth-child(3) {
-  height: 100vh;
-  background: rgb(235, 207, 229);
+#cadeira img {
+  width: 700px;
+  background-size: cover;
+  max-width: 100%;
 }
-
-img {
-     width: 700px;
-     background-size: cover;
-}
-
-
-
-
