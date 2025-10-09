@@ -18,17 +18,24 @@
             align-items: center;
             gap: 20px;
             justify-content: center;
-            background: greenyellow;
+        }
+
+        body {
+            background: lightblue;
         }
 
         section {
-            width: 200px;
+            width: 600px;
             background: rgb(255, 255, 255);
             padding: 10px;
             border-radius: 5px
         }
 
-        #idPinta {
+
+        #idPinta,
+        #escrever,
+        #background,
+        #contagem {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -117,13 +124,19 @@
 
         <section id="background">
 
-            <input type="text">
-            <button>muda background</button>
+
+            <label for="background">4. Escolha uma cor em inglês:</label>
+            <input id="background" type="text">
+            <button>submeter</button>
 
             <script>
 
+                //A: variáveis
+
                 const texto = document.querySelector("#background input")
                 const botao = document.querySelector("#background button")
+
+                //B: Event listeners
 
                 function mudaBackground() {
                     document.querySelector("body").style.background = texto.value
@@ -133,6 +146,25 @@
 
             </script>
 
+
+
+        </section>
+
+        <section id="contagem">
+
+            <p>5. </p>
+            <button onclick="contador()">Conta!</button>
+            <p id="numero">0</p>
+
+            <script>
+                let counter = 0;
+                const numero = document.querySelector("#numero");
+
+                function contador() {
+                    counter++;
+                    numero.textContent = counter;
+                }
+            </script>
 
 
         </section>
