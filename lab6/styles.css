@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#titulo {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: purple;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+header nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    margin: 10px;
+}
+
+#tituloProdutos{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+#produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+
+article {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 700px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+article img {
+    max-width: 100%;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+article h3 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+article p {
+    color: #555;
+}
+
+article button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 1px 2px 2px 1px;
+    background-color: #eee;
+    border-color: rgb(207, 207, 207);
+    border-radius: 5px;
+}
+
+.preco{
+    font-size: 20px;
+    color: black;
+}
+
+
+.descricao {
+    background-color: #eee;      
+    border-radius: 6px;
+    color: #333;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+
+#cesto {
+    background-color: purple;
+}
+
+#cesto h2, #precoTotal{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: white;
+}
+
+.produtoCesto {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#itensCesto {
+    display: flex;      
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px;              
+    padding: 20px;
+}
+
+#tituloProdutos, #produtos{
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
