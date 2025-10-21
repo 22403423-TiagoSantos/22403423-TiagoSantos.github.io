@@ -14,7 +14,7 @@ const precoTotalElemento = document.querySelector('#precoTotal');
 function atualizarPrecoTotal() {
     const produtosCesto = JSON.parse(localStorage.getItem('produtos-selecionados'));
     const total = produtosCesto.reduce((acc, produto) => acc + produto.price, 0);
-    precoTotalElemento.textContent = `Custo total: €${total.toFixed(2)}`;
+    precoTotalElemento.textContent = `Custo total: ${total.toFixed(2)} €`;
 }
 
 
