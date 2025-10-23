@@ -14,7 +14,7 @@ const precoTotalElemento = document.querySelector('#precoTotal');
 function atualizarPrecoTotal() {
     const produtosCesto = JSON.parse(localStorage.getItem('produtos-selecionados'));
     const total = produtosCesto.reduce((acc, produto) => acc + produto.price, 0);
-    precoTotalElemento.textContent = `Custo total: ${total.toFixed(2)} €`;
+    precoTotalElemento.textContent = `Custo total: ${total} €`;
 }
 
 
@@ -24,7 +24,7 @@ function criarProduto(produto) {
     artigo.innerHTML = `
         <h3>${produto.title}</h3>
         <img src="${produto.image}" alt="${produto.title}">
-        <p class="preco">Custo total: ${produto.price.toFixed(2)} €</p>
+        <p class="preco">Custo total: ${produto.price} €</p>
         <p class="descricao">${produto.description}</p>
         <button type="button">+ Adicionar ao Cesto</button>
     `;
@@ -47,7 +47,7 @@ function criaProdutoCesto(produto, index) {
     artigoCesto.innerHTML = `
         <h3>${produto.title}</h3>
         <img src="${produto.image}" alt="${produto.title}">
-        <p class="preco">Custo total: ${produto.price.toFixed(2)} €</p>
+        <p class="preco">Custo total: ${produto.price} €</p>
         <button type="button">- Remover do Cesto</button>
     `;
 
