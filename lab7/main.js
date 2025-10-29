@@ -1,6 +1,3 @@
-import { produtos } from './produtos.js';
-
-
 if (!localStorage.getItem('produtos-selecionados')) {
     localStorage.setItem('produtos-selecionados', JSON.stringify([]));
 }
@@ -84,6 +81,72 @@ function carregarProdutos(listaProdutos) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    carregarProdutos(produtos);
+    const filtroCategoria = document.querySelector('#filtroCategoria');
+
+    fetch("https://deisishop.pythonanywhere.com/categories")
+        .then(response => response.json())
+        .then(categorias => {
+            console.log("Categorias:", categorias);
+            categorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria;
+                option.textContent = categoria;
+                filtroCategoria.append(option);
+            });
+        })
+        .catch(error => console.error('Erro:', error));
+
+    fetch("https://deisishop.pythonanywhere.com/products")
+        .then(response => response.json())
+        .then(data => {
+            console.log('Produtos:', data);
+            carregarProdutos(data);
+        })
+        .catch(error => console.error('Erro:', error))
+
+    filtroCategoria.addEventListener('change', () => {
+        const categoriaSelecionada = filtroCategoria.value;
+
+        fetch("https://deisishop.pythonanywhere.com/products")
+            .then(response => response.json())
+            .then(produtos => {
+                let produtosFiltrados = produtos;
+                if (categoriaSelecionada !== "") {
+                    produtosFiltrados = produtos.filter(produto => produto.category === categoriaSelecionada);
+                }
+
+                seccaoProdutos.innerHTML = '';
+                carregarProdutos(produtosFiltrados);
+            })
+            .catch(error => console.error('Erro:', error));
+    });
+
+    ordenarPreco.addEventListener('change', () => {
+
+        const produtosArtigos = seccaoProdutos.querySelectorAll('article');
+
+
+        const produtosArray = [...produtosArtigos];
+
+
+        produtosArray.sort((a, b) => {
+            const precoA = a.querySelector('.preco');
+            const precoB = b.querySelector('.preco');
+
+            if (ordenarPreco.value === 'asc') {
+                return precoA - precoB;
+            }
+            if (ordenarPreco.value === 'desc') {
+                return precoB - precoA;
+            }
+            return 0;
+        });
+
+
+        seccaoProdutos.innerHTML = '';
+        produtosArray.forEach(produto => seccaoProdutos.append(produto));
+    });
+
+
     atualizaCesto();
 });
