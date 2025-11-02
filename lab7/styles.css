@@ -35,7 +35,7 @@ header nav a {
     margin: 10px;
 }
 
-#tituloProdutos{
+#tituloProdutos {
     display: flex;
     justify-content: center;
     padding-top: 60px;
@@ -90,14 +90,14 @@ article button {
     border-radius: 5px;
 }
 
-.preco{
+.preco {
     font-size: 20px;
     color: black;
 }
 
 
 .descricao {
-    background-color: #eee;      
+    background-color: #eee;
     border-radius: 6px;
     color: #333;
     font-style: italic;
@@ -111,12 +111,17 @@ article button {
     background-color: purple;
 }
 
-#cesto h2, #precoTotal{
+#cesto h2 {
     display: flex;
     justify-content: center;
     padding-top: 60px;
     padding-bottom: 60px;
     color: white;
+}
+
+#precoTotal {
+    display: flex;
+    justify-content: center;
 }
 
 .produtoCesto {
@@ -134,20 +139,37 @@ article button {
 }
 
 #itensCesto {
-    display: flex;      
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
-    gap: 20px;              
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
 }
 
-#tituloProdutos, #produtos{
+#tituloProdutos,
+#produtos {
     background-color: rgb(230, 230, 230);
+}
+
+#compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+#respostaCompra {
+    text-align: center;
+}
+
+#linhaCupao{
+    flex-direction: row;
 }
 
 
 
-footer{
+footer {
     margin-top: 50px;
     display: flex;
     justify-content: center;

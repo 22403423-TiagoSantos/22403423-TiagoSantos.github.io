@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const termoPesquisa = inputPesquisa.value.trim().toLowerCase();
         const ordem = ordenarPreco.value;
 
-        let produtosFiltrados = produtos; 
+        let produtosFiltrados = produtos;
 
         if (categoriaSelecionada !== "") {
             produtosFiltrados = produtosFiltrados.filter(produto => produto.category === categoriaSelecionada);
@@ -158,4 +158,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     atualizaCesto();
 });
+
+const botaoComprar = document.querySelector('#botaoComprar');
+const verificaEstudante = document.querySelector('#verificaEstudante');
+const inputCupao = document.querySelector('#inputCupao');
+const respostaCompra = document.querySelector('#respostaCompra');
+const custoTotal = document.querySelector('#custoTotal');
+const referencia = document.querySelector('#referencia');
+
+botaoComprar.addEventListener('click', () => {
+    const produtosCesto = JSON.parse(localStorage.getItem('produtos-selecionados'));
+    const idsProdutos = produtosCesto.map(produto => produto.id);
+    const estudante = verificaEstudante.checked;
+    const cupao = inputCupao.value.trim();
+
+    const data = {
+        products: idsProdutos,
+        student: estudante,
+        coupon: cupao
+    };
+
+    fetch('https://deisishop.pythonanywhere.com/buy/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+        .then(response => response.json())
+        .then(data => {
+            custoTotal.textContent = `Valor final a pagar (com eventuais descontos): ${data.totalCost} €`;
+            referencia.textContent = `Referência de pagamento: ${data.reference} €`;
+        });
+});
+
+
 
